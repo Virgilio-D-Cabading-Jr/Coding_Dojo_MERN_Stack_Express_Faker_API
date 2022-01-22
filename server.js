@@ -67,10 +67,10 @@ app.get("/api/product", (req, res) => {
 /**
  * User Route *********************************
  */
- app.get("/api/user", (req, res) => {
+ app.get("/api/users/new", (req, res) => {
   const user = new User();
   console.log(".: User :", user, ":.");
-  res.send(`User: ${ JSON.stringify(user) }`)
+  res.send(user);
 });
 
 app.get("/api/company", (req, res) => {
