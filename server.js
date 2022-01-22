@@ -38,13 +38,13 @@ class Company {
   constructor() {
     this._id = faker.finance.account();
     this.name = faker.company.companyName() + " " + faker.company.companySuffix()
-    // this.address = {
-    //   street: ,
-    //   city: ,
-    //   state: ,
-    //   zipCode: ,
-    //   country: 
-    // }
+    this.address = {
+      street: faker.address.streetAddress(),
+      city: faker.address.city(),
+      state: faker.address.state(),
+      zipCode: faker.address.zipCode(),
+      country: faker.address.country()
+    }
   }
 }
 
