@@ -1,3 +1,5 @@
+import Product from "./Product";
+
 // **** Express ********
 const express = require("express");
 const app = express();
@@ -9,9 +11,13 @@ const faker = require('@faker-js/faker');
 //  SERVER JAVASCRIPT
 ///////////////////////////////////////////////
 
+// //// FIELDS ////////////////////////////////
 const randomName = faker.name.findName();
+const product = new Product();
 
-//  //// ROUTES ///////////////////////////////
+console.log(".: Product :", product, ":.");
+
+// //// ROUTES ////////////////////////////////
 //    req is short for request, res is short for response
 app.get("/api", (req, res) => {
   // res.send("Our express api server is now sending this over to the browser");
