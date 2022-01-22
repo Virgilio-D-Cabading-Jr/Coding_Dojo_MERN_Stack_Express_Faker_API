@@ -7,3 +7,5 @@ Program Origin: Coding Dojo > MERN Stack > Express
 Language: Javascript
 
 Framework: Express
+
+Scripts used: npm
