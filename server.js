@@ -34,6 +34,20 @@ class User {
   }
 }
 
+class Company {
+  constructor() {
+    this._id = faker.finance.account();
+    this.name =
+    this.address = {
+      street: ,
+      city: ,
+      state: ,
+      zipCode: ,
+      country: 
+    }
+  }
+}
+
 // //// FIELDS ////////////////////////////////
 const randomName = faker.name.findName();
 
