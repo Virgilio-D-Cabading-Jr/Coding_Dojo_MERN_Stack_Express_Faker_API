@@ -10,17 +10,6 @@ const faker = require('@faker-js/faker');
 ///////////////////////////////////////////////
 
 /**
- * Product Class ******************************
- */
- class Product {
-  constructor() {
-      this.name = faker.commerce.productName();
-      this.price = `$${ faker.commerce.price() }`;
-      this.department = faker.commerce.department();
-  }
-}
-
-/**
  * User Class **********************************
  */
 class User {
@@ -34,6 +23,9 @@ class User {
   }
 }
 
+/**
+ * Company Class *******************************
+ */
 class Company {
   constructor() {
     this._id = faker.finance.account();
@@ -48,21 +40,8 @@ class Company {
   }
 }
 
-// //// FIELDS ////////////////////////////////
-const randomName = faker.name.findName();
-
 // //// ROUTES ////////////////////////////////
 //    req is short for request, res is short for response
-
-/**
- * Product Route ******************************
- */
-app.get("/api/product", (req, res) => {
-  const product = new Product();
-  console.log(".: Product :", product, ":.");
-  // res.send("Our express api server is now sending this over to the browser");
-  res.send(`Product: ${ JSON.stringify(product) }`)
-});
 
 /**
  * User Route *********************************
