@@ -37,14 +37,14 @@ class User {
 class Company {
   constructor() {
     this._id = faker.finance.account();
-    this.name =
-    this.address = {
-      street: ,
-      city: ,
-      state: ,
-      zipCode: ,
-      country: 
-    }
+    this.name = faker.company.companyName() + " " + faker.company.companySuffix()
+    // this.address = {
+    //   street: ,
+    //   city: ,
+    //   state: ,
+    //   zipCode: ,
+    //   country: 
+    // }
   }
 }
 
@@ -71,6 +71,12 @@ app.get("/api/product", (req, res) => {
   const user = new User();
   console.log(".: User :", user, ":.");
   res.send(`User: ${ JSON.stringify(user) }`)
+});
+
+app.get("/api/company", (req, res) => {
+  const company = new Company();
+  console.log("Navigated to /api/company || ", JSON.stringify(company));
+  res.send(`Company: ${ JSON.stringify(company) }`);
 });
 
 const server = app.listen(PORT, () =>
