@@ -6,6 +6,6 @@ Program Origin: Coding Dojo > MERN Stack > Express
 
 Language: Javascript
 
-Framework: Express
+Library: Express, Faker API
 
 Scripts used: npm
