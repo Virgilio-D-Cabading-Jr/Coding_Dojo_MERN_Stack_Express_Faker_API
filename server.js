@@ -1,5 +1,3 @@
-import Product from "./Product";
-
 // **** Express ********
 const express = require("express");
 const app = express();
@@ -11,19 +9,41 @@ const faker = require('@faker-js/faker');
 //  SERVER JAVASCRIPT
 ///////////////////////////////////////////////
 
+/**
+ * Product Class ******************************
+ */
+ class Product {
+  constructor() {
+      this.name = faker.commerce.productName();
+      this.price = `$${ faker.commerce.price() }`;
+      this.department = faker.commerce.department();
+  }
+}
+
+/**
+ * User Class **********************************
+ */
+class User {
+  constructor() {
+    
+  }
+}
+
 // //// FIELDS ////////////////////////////////
 const randomName = faker.name.findName();
-const product = new Product();
-
-console.log(".: Product :", product, ":.");
 
 // //// ROUTES ////////////////////////////////
 //    req is short for request, res is short for response
-app.get("/api", (req, res) => {
-  // res.send("Our express api server is now sending this over to the browser");
-  res.send(`Faker name: ${randomName}`)
-});
 
+/**
+ * Product Route ******************************
+ */
+app.get("/api/product", (req, res) => {
+  const product = new Product();
+  console.log(".: Product :", product, ":.");
+  // res.send("Our express api server is now sending this over to the browser");
+  res.send(`Product: ${ JSON.stringify(product) }`)
+});
 
 const server = app.listen(PORT, () =>
   console.log(`🦄 🦄 🦄 Server is running and listening on Port ${server.address().port}! 🦄 🦄 🦄`)
