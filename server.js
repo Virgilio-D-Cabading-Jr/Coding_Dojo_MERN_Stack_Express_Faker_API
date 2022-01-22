@@ -48,15 +48,32 @@ class Company {
  */
  app.get("/api/users/new", (req, res) => {
   const user = new User();
-  console.log(".: User :", user, ":.");
+  console.log("Navigated to /api/users/new ||", JSON.stringify(uer));
   res.send(user);
 });
 
-app.get("/api/company", (req, res) => {
+/**
+ * Company Route ******************************
+ */
+app.get("/api/companies/new", (req, res) => {
   const company = new Company();
-  console.log("Navigated to /api/company || ", JSON.stringify(company));
-  res.send(`Company: ${ JSON.stringify(company) }`);
+  console.log("Navigated to /api/companies/new || ", JSON.stringify(company));
+  res.send(company);
 });
+
+/**
+ * User Company Route *************************
+ */
+app.get("/api/user/company", (req, res) => {
+  const user = new User();
+  const company = new Company();
+  const userCompany = {
+    user: user,
+    company: company
+  }
+  console.log("Navigated to /api/user/company", JSON.stringify(userCompany));
+  res.send(userCompany);
+})
 
 const server = app.listen(PORT, () =>
   console.log(`🦄 🦄 🦄 Server is running and listening on Port ${server.address().port}! 🦄 🦄 🦄`)
