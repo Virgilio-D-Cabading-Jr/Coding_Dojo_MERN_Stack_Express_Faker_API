@@ -26,7 +26,7 @@ const faker = require('@faker-js/faker');
 class User {
   constructor() {
     this._id = faker.finance.account();
-    // this.firstName =
+    this.firstName = faker.name.findName();
     // this.lastName = 
     // this.phoneNumber =
     // this.email =
