@@ -25,7 +25,12 @@ const faker = require('@faker-js/faker');
  */
 class User {
   constructor() {
-    
+    this._id = faker.finance.account();
+    // this.firstName =
+    // this.lastName = 
+    // this.phoneNumber =
+    // this.email =
+    // this.password =
   }
 }
 
@@ -43,6 +48,15 @@ app.get("/api/product", (req, res) => {
   console.log(".: Product :", product, ":.");
   // res.send("Our express api server is now sending this over to the browser");
   res.send(`Product: ${ JSON.stringify(product) }`)
+});
+
+/**
+ * User Route *********************************
+ */
+ app.get("/api/user", (req, res) => {
+  const user = new User();
+  console.log(".: User :", user, ":.");
+  res.send(`User: ${ JSON.stringify(user) }`)
 });
 
 const server = app.listen(PORT, () =>
